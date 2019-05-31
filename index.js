@@ -2,12 +2,20 @@ const chokidar = require('chokidar');
 const mkdirp = require('mkdirp');
 const fs = require('fs');
 const path = require('path');
-require('colors');
 
-const args = process.argv.slice(2);
+let watch = false
+
+const args = process.argv.slice(2).filter(arg => {
+  if (arg === '--watch') {
+    watch = true
+    return false
+  }
+
+  return true
+})
 
 if (args.length < 2) {
-  console.error('Not enough arguments: watch-and-copy-files-recursively <sources> <target>'.red);
+  console.error('Not enough arguments: watch-and-copy-files-recursively <sources> <target>');
   process.exit(1);
 }
 
@@ -53,6 +61,11 @@ watcher
   .on('unlink', onRemove)
   .on('addDir', onAddDir)
   .on('unlinkDir', onRemoveDir)
+  .on('ready', () => {
+    if (!watch) {
+      process.exit(0)
+    }
+  })
   .on('error', error => {
     console.error(error);
     process.exit(1);
