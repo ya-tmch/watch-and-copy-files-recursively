@@ -1,0 +1,15 @@
+{
+  "name": "watch-and-copy-files-recursively",
+  "version": "1.0.0",
+  "description": "",
+  "main": "watch-and-copy-files-recursively.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.0.0",
+    "mkdirp": "^0.5.1"
+  }
+}
