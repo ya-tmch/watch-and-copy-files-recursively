@@ -1,12 +1,17 @@
 {
   "name": "watch-and-copy-files-recursively",
-  "version": "1.0.0",
-  "description": "",
-  "main": "watch-and-copy-files-recursively.js",
+  "version": "0.1.0",
+  "description": "Monitoring and copying files recursively.",
+  "main": "index.js",
+  "homepage": "https://github.com/ya-tmch/watch-and-copy-files-recursively",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ya-tmch/watch-and-copy-files-recursively.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ya.tmch@ya.ru",
   "license": "ISC",
   "dependencies": {
     "chokidar": "^3.0.0",
